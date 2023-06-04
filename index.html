@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Space Adventure</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+    <!-- Firebase App (the core Firebase SDK) is always required -->
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+
+    <!-- Add the Firebase products that you want to use -->
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
+
+</head>
+    <body>
+        <div id="welcomeScreen">
+            <h1 class="welcomeTitle">Uzay Yolculuğu</h1>
+            <button id="startButton" class="startButton">Başla</button>
+        </div>    
+        <div id="heroSelection" style="flex-direction: column; align-items: center;">
+            <div id="row1">
+                <div id="launchCmd" class="cmd">
+                    <p id="cmdText"></p>
+                </div>
+            </div>
+        
+            <div id="row2" style="display: none;margin-top: 50%;">
+                <div class="heroGrid">
+                    <div class="heroCard" id="hero1" style="visibility: hidden;">
+                        <img src="hero1.png" alt="Hero 1">
+                    </div>
+                    <div class="heroCard" id="hero2" style="visibility: hidden;">
+                        <img src="hero2.png" alt="Hero 2">
+                    </div>
+                    <div class="heroCard" id="hero3" style="visibility: hidden;">
+                        <img src="hero3.png" alt="Hero 3">
+                    </div>
+                </div>
+            </div>
+            <button id="continueButton" class="startButton" disabled>Continue</button>
+        </div>
+            
+        <div id="rocketSelection" style="display: none; flex-direction: column; align-items: center;">
+            <div id="row1Rocket">
+                <div id="launchCmd" class="cmd">
+                    <p id="cmdTextRocket"></p>
+                </div>
+            </div>
+        
+            <div id="row2Rocket" style="margin-top: 50%;">
+                <div class="rocketGrid">
+                    <div class="rocketCard" id="rocket1" style="visibility: hidden; background-color: white;">
+                        <img src="rocket1_transparent.png" alt="Rocket 1">
+                    </div>
+                    <div class="rocketCard" id="rocket2" style="visibility: hidden; background-color: white;">
+                        <img src="rocket2_transparent.png" alt="Rocket 2">
+                    </div>
+                    <div class="rocketCard" id="rocket3" style="visibility: hidden; background-color: white;">
+                        <img src="rocket3_transparent.png" alt="Rocket 3">
+                    </div>
+                </div>
+            </div>
+            <button id="continueButtonRocket" class="startButton" disabled>Continue</button>
+        </div>
+        
+        <div id="planetSelection" style="display: none; flex-direction: column; align-items: center;">
+            <div id="row1Planet">
+                <div id="launchCmd" class="cmd">
+                    <p id="cmdTextPlanet"></p>
+                </div>
+            </div>
+        
+            <div id="row2Planet" style="margin-top: 50%;">
+                <div class="planetGrid">
+                    <div class="planetCard" id="planet1" style="visibility: hidden; background-color: white;">
+                        <img src="planet1_transparent.png" alt="Planet 1">
+                    </div>
+                    <div class="planetCard" id="planet2" style="visibility: hidden; background-color: white;">
+                        <img src="planet2_transparent.png" alt="Planet 2">
+                    </div>
+                    <div class="planetCard" id="planet3" style="visibility: hidden; background-color: white;">
+                        <img src="planet3_transparent.png" alt="Planet 3">
+                    </div>
+                </div>
+            </div>
+            <button id="continueButtonPlanet" class="startButton" disabled>Continue</button>
+        </div>
+        
+        <div id="colorSelection" style="display: none; flex-direction: column; align-items: center;">
+            <div id="row1Color">
+                <div id="launchCmd" class="cmd">
+                    <p id="cmdTextColor"></p>
+                </div>
+            </div>
+        
+            <div id="row2Color" style="margin-top: 50%;">
+                <div class="colorGrid">
+                    <div class="colorCard" id="color1" style="visibility: hidden;">
+                        <img class="colorCircle" src="color1.png" alt="Color 1">
+                    </div>
+                    <div class="colorCard" id="color2" style="visibility: hidden;">
+                        <img class="colorCircle" src="color2.png" alt="Color 2">
+                    </div>
+                    <div class="colorCard" id="color3" style="visibility: hidden;">
+                        <img class="colorCircle" src="color3.png" alt="Color 3">
+                    </div>
+                </div>
+            </div>
+            <button id="continueButtonColor" class="startButton" disabled>Continue</button>
+        </div>
+        <div id="launchScreen" class="selectionScreen" style="display: none;">
+            <div class="launchContent">
+            <div id="launchCmd" class="cmd">
+                <p id="launchCmdText"></p>
+            </div>
+            <button id="launchButton" class="launchButton">LAUNCH</button>
+            </div>
+        </div>
+        <script src="script.js"></script>
+    </body>
+</html>

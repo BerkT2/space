@@ -1,0 +1,291 @@
+body {
+    font-family: 'Major Mono Display', monospace;
+    background: url("space.png") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    color: white;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden; /* added */
+    align-items: center; /* added */
+}
+
+
+.welcomeTitle {
+    font-size: 2.5em;
+    text-align: center;
+    color: white;
+    text-shadow: 2px 2px 4px #000000;
+}
+
+.startButton {
+    display: block;
+    width: 200px;
+    height: 50px;
+    margin: 20px auto;
+    background: #000000;
+    border: 2px solid #ffffff;
+    color: white;
+    border-radius: 25px;
+    font-size: 1.5em;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    box-shadow: 0 0 10px #ffffff;
+    animation: pulse 2s infinite;
+}
+
+.startButton:hover {
+    background-color: #ffffff;
+    color: #000000;
+}
+
+@keyframes pulse {
+    0% { box-shadow: 0 0 10px #ffffff, 0 0 10px #ffffff, 0 0 10px #ffffff, 0 0 10px #ffffff; }
+    50% { box-shadow: 0 0 20px #ffffff, 0 0 30px #ffffff, 0 0 40px #ffffff, 0 0 50px #ffffff; }
+    100% { box-shadow: 0 0 10px #ffffff, 0 0 10px #ffffff, 0 0 10px #ffffff, 0 0 10px #ffffff; }
+}
+
+.cmd {
+    background-color: #000000;
+    color: #00ff00;
+    font-family: 'Major Mono Display', monospace;
+    font-size: 1em;
+    padding: 1em;
+    margin: 1em auto;
+    text-align: left;
+    border-radius: 15px;
+    max-width: 80%;
+    width: 80%;
+    height: 19%;
+    position: fixed; /* added */
+    top: 15%; /* added */
+    left: 5%; /* added */
+}
+
+.heroGrid {
+    display: flex;
+    justify-content: space-between;
+    align-items: center; /* added */
+    width: 100%;
+}
+
+.heroCard {
+    width: 30%;
+    transition: transform 0.3s ease;
+    padding: 0 2%; /* added */
+}
+
+.heroCard img {
+    width: 100%;
+}
+#heroSelection {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+#continueButton {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.startButton.disabled {
+    display: none;
+}
+.selected {
+    transform: scale(1.1) !important;
+}
+.rocketGrid {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.rocketCard {
+    width: 30%;
+    transition: transform 0.3s ease;
+}
+
+.rocketCard img {
+    width: 100%;
+}
+
+#rocketSelection {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+#continueButtonRocket {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.planetGrid {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.planetCard {
+    width: 30%;
+    transition: transform 0.3s ease;
+}
+
+.planetCard img {
+    width: 100%;
+}
+
+#planetSelection {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+#continueButtonPlanet {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+
+.colorGrid {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.colorCard {
+    width: 30%;
+    transition: transform 0.3s ease;
+    padding: 0 2%;
+}
+
+.colorCircle{
+    width: 100%;
+}
+
+#colorSelection {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+#launchScreen {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+#continueButtonColor {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.launchButton {
+    display: block;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 200px;
+    height: 50px;
+    background: #ff0000; /* Red background */
+    border: 2px solid #ffffff;
+    color: white;
+    border-radius: 25px;
+    font-size: 1.5em;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    box-shadow: 0 0 10px #ffffff;
+    animation: pulse 2s infinite;
+    display: none; /* The button will initially be hidden */
+  }
+  
+  .launchButton:hover {
+    background-color: #ffffff;
+    color: #ff0000; /* Red text color */
+  }
+  
+  @keyframes pulse {
+    0% {
+      box-shadow: 0 0 10px #ffffff, 0 0 10px #ffffff, 0 0 10px #ffffff, 0 0 10px #ffffff;
+    }
+    50% {
+      box-shadow: 0 0 20px #ffffff, 0 0 30px #ffffff, 0 0 40px #ffffff, 0 0 50px #ffffff;
+    }
+    100% {
+      box-shadow: 0 0 10px #ffffff, 0 0 10px #ffffff, 0 0 10px #ffffff, 0 0 10px #ffffff;
+    }
+  }
+  
+  .shake-animation {
+    animation: shake 0.5s linear infinite;
+}
+
+@keyframes shake {
+    0% { transform: translate(0); }
+    25% { transform: translate(-5px, -5px); }
+    50% { transform: translate(5px, 5px); }
+    75% { transform: translate(-5px, -5px); }
+    100% { transform: translate(0); }
+}
+
+.hidden {
+    display: none !important;
+  }
+  
+  @keyframes shake {
+    0% { transform: translate(1px, 1px) rotate(0deg); }
+    10% { transform: translate(-1px, -2px) rotate(-1deg); }
+    20% { transform: translate(-3px, 0px) rotate(1deg); }
+    30% { transform: translate(3px, 2px) rotate(0deg); }
+    40% { transform: translate(1px, -1px) rotate(1deg); }
+    50% { transform: translate(-1px, 2px) rotate(-1deg); }
+    60% { transform: translate(-3px, 1px) rotate(0deg); }
+    70% { transform: translate(3px, 1px) rotate(-1deg); }
+    80% { transform: translate(-1px, -1px) rotate(1deg); }
+    90% { transform: translate(1px, 2px) rotate(0deg); }
+    100% { transform: translate(1px, -2px) rotate(-1deg); }
+  }
+  
+  .shake {
+    animation: shake 0.1s; 
+    animation-iteration-count: infinite;
+  }
+  
+
+  .rocketAnimation {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+
+@keyframes blip {
+    0% { opacity: 1; }
+    50% { opacity: 0; }
+    100% { opacity: 1; }
+  }
+  
+  .blip {
+    animation: blip 1s;
+    animation-iteration-count: infinite;
+  }
