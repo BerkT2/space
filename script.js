@@ -1,10 +1,16 @@
 const startButton = document.querySelector('.startButton');
 const welcomeTitle = document.querySelector('.welcomeTitle');
+const music = document.getElementById("background-music");
+const launch_start = document.getElementById("launch_start");
+const launch_finish = document.getElementById("launch_finish");
 
 startButton.addEventListener('click', (e) => {
     // Prevent default action
     e.preventDefault();
 
+
+    music.play();
+    
     // Anime.js animations
     anime({
         targets: startButton,
@@ -253,7 +259,7 @@ continueButtonRocket.addEventListener('click', (e) => {
 
     // Start typing the text for planet selection
     i = 0; // reset the counter
-    txt = 'Son aşama! Gezegen seç!'; // update the text
+    txt = 'Şimdi bir bakalım... \nİstila etmemiz gereken üç gezegen var. Hangisini durdurmak önceliğin olacak?'; // update the text
     cmdText = cmdTextPlanet; // update the command text element
     typeWriterPlanet(); // start the typing animation
 
@@ -414,6 +420,7 @@ function saveToFirebase() {
 
 
 document.getElementById("launchButton").addEventListener("click", function() {
+    launch_start.play();
     var count = 10000; // Start countdown from 10 seconds (10,000 milliseconds)
     var launchCmdText = document.getElementById("launchCmdText");
     let counterText = formatCountdown(count);
@@ -432,6 +439,7 @@ document.getElementById("launchButton").addEventListener("click", function() {
         count -= 10; // Decrease by 10 milliseconds
         launchCmdText.innerHTML = formatCountdown(count);
         if (count <= 0) {
+            launch_start.pause();
             clearInterval(countdown);
             launchCmdText.innerHTML = "Hediyeniz yola çıktı!";
             launchCmdText.style.fontSize = "2em";
@@ -441,6 +449,7 @@ document.getElementById("launchButton").addEventListener("click", function() {
             shakeScreen(5); // Shake the screen for 5 seconds
             // Animate the rocket image
             animateRocket();
+            launch_finish.play();
             animatePlanet();
             saveToFirebase();
         }
